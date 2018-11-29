@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "topics#index"
   # Routes for the Resource resource:
 
   # CREATE
