@@ -1,4 +1,6 @@
 ActiveAdmin.register Tab do
+
+ permit_params :title, :num_of_tabs, :topic_id
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
