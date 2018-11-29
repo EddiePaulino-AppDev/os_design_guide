@@ -1,0 +1,82 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Topic #<%= @topic.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/topics" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link topic start -->
+      <div class="col">
+        <a href="/topics/<%= @topic.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit topic
+        </a>
+      </div>
+      <!-- Edit link topic end -->
+
+      <!-- Delete link topic start -->
+      <div class="col">
+        <a href="/delete_topic/<%= @topic.id %>" class="btn btn-block btn-outline-secondary">
+          Delete topic
+        </a>
+      </div>
+      <!-- Delete link topic end -->
+    </div>
+
+    <dl>
+      <dt>
+        Csi section
+      </dt>
+      <!-- Display csi_section start -->
+      <dd>
+        <%= @topic.csi_section %>
+      </dd>
+      <!-- Display csi_section end -->
+
+      <dt>
+        Title
+      </dt>
+      <!-- Display title start -->
+      <dd>
+        <%= @topic.title %>
+      </dd>
+      <!-- Display title end -->
+
+      <dt>
+        Engineering discipline
+      </dt>
+      <!-- Display engineering_discipline start -->
+      <dd>
+        <%= @topic.engineering_discipline %>
+      </dd>
+      <!-- Display engineering_discipline end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@topic.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@topic.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
