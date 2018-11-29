@@ -34,7 +34,11 @@
       </dt>
       <!-- Display tab_id start -->
       <dd>
-        <%= @text_component.tab_id %>
+        <% if @text_component.tab.present? %>
+          <a href="/tabs/<%= @text_component.tab_id %>">
+            <%= @text_component.tab.title %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display tab_id end -->
 

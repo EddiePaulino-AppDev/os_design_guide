@@ -68,7 +68,11 @@
 
         <!-- Display resource.tab_id start -->
         <td>
-          <%= resource.tab.title %>
+          <% if resource.tab.present? %>
+            <a href="/tabs/<%= resource.tab.id %>">
+              <%= resource.tab.title %>
+            </a>
+          <% end %>
         </td>
         <!-- Display resource.tab_id end -->
 

@@ -74,7 +74,11 @@
 
         <!-- Display tab.topic_id start -->
         <td>
-          <%= tab.topic.csi_section %>
+          <% if tab.topic.present? %>
+            <a href="/topics/<%= tab.topic.id %>">
+              <%= tab.topic.csi_section %>
+            </a>
+          <% end %>
         </td>
         <!-- Display tab.topic_id end -->
 

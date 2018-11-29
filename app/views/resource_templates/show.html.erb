@@ -43,7 +43,11 @@
       </dt>
       <!-- Display tab_id start -->
       <dd>
-        <%= @resource.tab_id %>
+        <% if @resource.tab.present? %>
+          <a href="/tabs/<%= @resource.tab_id %>">
+            <%= @resource.tab.title %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display tab_id end -->
 

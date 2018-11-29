@@ -52,7 +52,11 @@
       </dt>
       <!-- Display topic_id start -->
       <dd>
-        <%= @tab.topic_id %>
+        <% if @tab.topic.present? %>
+          <a href="/topics/<%= @tab.topic_id %>">
+            <%= @tab.topic.csi_section %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display topic_id end -->
 

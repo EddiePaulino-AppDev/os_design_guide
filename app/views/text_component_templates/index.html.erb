@@ -62,7 +62,11 @@
 
         <!-- Display text_component.tab_id start -->
         <td>
-          <%= text_component.tab.title %>
+          <% if text_component.tab.present? %>
+            <a href="/tabs/<%= text_component.tab.id %>">
+              <%= text_component.tab.title %>
+            </a>
+          <% end %>
         </td>
         <!-- Display text_component.tab_id end -->
 
