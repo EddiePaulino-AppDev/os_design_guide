@@ -11,37 +11,30 @@
         </a>
       </div>
 
-      <!-- Edit link resource start -->
       <div class="col">
         <a href="/resources/<%= @resource.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit resource
         </a>
       </div>
-      <!-- Edit link resource end -->
 
-      <!-- Delete link resource start -->
       <div class="col">
         <a href="/delete_resource/<%= @resource.id %>" class="btn btn-block btn-outline-secondary">
           Delete resource
         </a>
       </div>
-      <!-- Delete link resource end -->
     </div>
 
     <dl>
       <dt>
         Category
       </dt>
-      <!-- Display category start -->
       <dd>
         <%= @resource.category %>
       </dd>
-      <!-- Display category end -->
 
       <dt>
         Tab
       </dt>
-      <!-- Display tab_id start -->
       <dd>
         <% if @resource.tab.present? %>
           <a href="/tabs/<%= @resource.tab_id %>">
@@ -49,37 +42,28 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display tab_id end -->
 
       <dt>
         Resource
       </dt>
-      <!-- Display resource start -->
       <dd>
         <%= @resource.resource %>
       </dd>
-      <!-- Display resource end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@resource.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@resource.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

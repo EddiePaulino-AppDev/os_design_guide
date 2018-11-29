@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @tab.text_components.each do |text_component| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/text_components/<%= text_component.id %>">
           <%= text_component.header %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_text_component_from_tab/<%= text_component.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="tab_text_components_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "tab_templates/tab_text_components_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

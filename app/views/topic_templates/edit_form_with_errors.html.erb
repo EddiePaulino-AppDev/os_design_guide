@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @topic.errors.any? %>
   <% @topic.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,45 +12,31 @@
 
 <hr>
 
-<!-- Form topic start -->
 <form action="/update_topic/<%= @topic.id %>" method="post">
-<!-- Form topic end -->
 
-  <!-- Label and input for csi_section start -->
   <div class="form-group">
     <label for="csi_section">
       Csi section
     </label>
 
-    <!-- Input for csi_section start -->
     <input type="text" id="csi_section" name="csi_section" class="form-control" value="<%= @topic.csi_section %>">
-    <!-- Input for csi_section end -->
   </div>
-  <!-- Label and input for csi_section end -->
 
-  <!-- Label and input for title start -->
   <div class="form-group">
     <label for="title">
       Title
     </label>
 
-    <!-- Input for title start -->
     <input type="text" id="title" name="title" class="form-control" value="<%= @topic.title %>">
-    <!-- Input for title end -->
   </div>
-  <!-- Label and input for title end -->
 
-  <!-- Label and input for engineering_discipline start -->
   <div class="form-group">
     <label for="engineering_discipline">
       Engineering discipline
     </label>
 
-    <!-- Input for engineering_discipline start -->
     <input type="text" id="engineering_discipline" name="engineering_discipline" class="form-control" value="<%= @topic.engineering_discipline %>">
-    <!-- Input for engineering_discipline end -->
   </div>
-  <!-- Label and input for engineering_discipline end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update topic

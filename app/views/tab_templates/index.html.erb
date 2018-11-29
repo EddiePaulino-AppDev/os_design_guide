@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "tab_templates/tabs_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -58,25 +54,18 @@
 
       <% @tabs.each do |tab| %>
       <tr>
-        <!-- Display tab.id start -->
         <td>
           <%= tab.id %>
         </td>
-        <!-- Display tab.id end -->
 
-        <!-- Display tab.title start -->
         <td>
           <%= tab.title %>
         </td>
-        <!-- Display tab.title end -->
 
-        <!-- Display tab.num_of_tabs start -->
         <td>
           <%= tab.num_of_tabs %>
         </td>
-        <!-- Display tab.num_of_tabs end -->
 
-        <!-- Display tab.topic_id start -->
         <td>
           <% if tab.topic.present? %>
             <a href="/topics/<%= tab.topic.id %>">
@@ -84,19 +73,14 @@
             </a>
           <% end %>
         </td>
-        <!-- Display tab.topic_id end -->
 
-        <!-- Display tab.created_at start -->
         <td>
           <%= time_ago_in_words(tab.created_at) %> ago
         </td>
-        <!-- Display tab.created_at end -->
 
-        <!-- Display tab.updated_at start -->
         <td>
           <%= time_ago_in_words(tab.updated_at) %> ago
         </td>
-        <!-- Display tab.updated_at end -->
 
         <td>
           <a href="/tabs/<%= tab.id %>">

@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link text_component start -->
       <div class="col">
         <a href="/text_components/<%= @text_component.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit text component
         </a>
       </div>
-      <!-- Edit link text_component end -->
 
-      <!-- Delete link text_component start -->
       <div class="col">
         <a href="/delete_text_component/<%= @text_component.id %>" class="btn btn-block btn-outline-secondary">
           Delete text component
         </a>
       </div>
-      <!-- Delete link text_component end -->
     </div>
 
     <dl>
       <dt>
         Tab
       </dt>
-      <!-- Display tab_id start -->
       <dd>
         <% if @text_component.tab.present? %>
           <a href="/tabs/<%= @text_component.tab_id %>">
@@ -40,46 +35,35 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display tab_id end -->
 
       <dt>
         Header
       </dt>
-      <!-- Display header start -->
       <dd>
         <%= @text_component.header %>
       </dd>
-      <!-- Display header end -->
 
       <dt>
         Content
       </dt>
-      <!-- Display content start -->
       <dd>
         <%= @text_component.content %>
       </dd>
-      <!-- Display content end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@text_component.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@text_component.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

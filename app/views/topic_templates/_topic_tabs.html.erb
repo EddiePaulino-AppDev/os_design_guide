@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @topic.tabs.each do |tab| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/tabs/<%= tab.id %>">
           <%= tab.title %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_tab_from_topic/<%= tab.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="topic_tabs_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "topic_templates/topic_tabs_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

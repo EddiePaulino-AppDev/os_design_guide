@@ -4,45 +4,31 @@
 
 <hr>
 
-<!-- Form resource start -->
 <form action="/update_resource/<%= @resource.id %>" method="post">
-<!-- Form resource end -->
 
-  <!-- Label and input for category start -->
   <div class="form-group">
     <label for="category">
       Category
     </label>
 
-    <!-- Input for category start -->
     <input type="text" id="category" name="category" class="form-control" value="<%= @resource.category %>">
-    <!-- Input for category end -->
   </div>
-  <!-- Label and input for category end -->
 
-  <!-- Label and input for tab_id start -->
   <div class="form-group">
     <label for="tab_id">
       Tab
     </label>
 
-    <!-- Input for tab_id start -->
     <%= select_tag(:tab_id, options_from_collection_for_select(Tab.all, :id, :title, @resource.tab_id), :class => "form-control") %>
-    <!-- Input for tab_id end -->
   </div>
-  <!-- Label and input for tab_id end -->
 
-  <!-- Label and input for resource start -->
   <div class="form-group">
     <label for="resource">
       Resource
     </label>
 
-    <!-- Input for resource start -->
     <input type="text" id="resource" name="resource" class="form-control" value="<%= @resource.resource %>">
-    <!-- Input for resource end -->
   </div>
-  <!-- Label and input for resource end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update resource
