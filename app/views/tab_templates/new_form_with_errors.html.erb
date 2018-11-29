@@ -51,7 +51,7 @@
     </label>
 
     <!-- Input for topic_id start -->
-    <input type="text" id="topic_id" name="topic_id" class="form-control" value="<%= @tab.topic_id %>">
+    <%= select_tag(:topic_id, options_from_collection_for_select(Topic.all, :id, :csi_section, @tab.topic_id), :class => "form-control") %>
     <!-- Input for topic_id end -->
   </div>
   <!-- Label and input for topic_id end -->
