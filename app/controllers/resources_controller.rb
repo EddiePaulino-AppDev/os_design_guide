@@ -1,6 +1,7 @@
 class ResourcesController < ApplicationController
   def index
-    @resources = Resource.page(params[:page]).per(10)
+    @q = Resource.ransack(params[:q])
+    @resources = @q.result(:distinct => true).includes(:tab).page(params[:page]).per(10)
 
     render("resource_templates/index.html.erb")
   end

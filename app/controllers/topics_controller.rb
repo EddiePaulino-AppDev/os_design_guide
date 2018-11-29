@@ -1,6 +1,7 @@
 class TopicsController < ApplicationController
   def index
-    @topics = Topic.page(params[:page]).per(10)
+    @q = Topic.ransack(params[:q])
+    @topics = @q.result(:distinct => true).includes(:tabs).page(params[:page]).per(10)
 
     render("topic_templates/index.html.erb")
   end

@@ -1,6 +1,7 @@
 class TabsController < ApplicationController
   def index
-    @tabs = Tab.page(params[:page]).per(10)
+    @q = Tab.ransack(params[:q])
+    @tabs = @q.result(:distinct => true).includes(:topic, :text_components, :resources).page(params[:page]).per(10)
 
     render("tab_templates/index.html.erb")
   end

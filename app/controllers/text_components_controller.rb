@@ -1,6 +1,7 @@
 class TextComponentsController < ApplicationController
   def index
-    @text_components = TextComponent.page(params[:page]).per(10)
+    @q = TextComponent.ransack(params[:q])
+    @text_components = @q.result(:distinct => true).includes(:tab).page(params[:page]).per(10)
 
     render("text_component_templates/index.html.erb")
   end
