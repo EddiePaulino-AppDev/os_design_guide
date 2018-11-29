@@ -1,6 +1,6 @@
 class ResourcesController < ApplicationController
   def index
-    @resources = Resource.all
+    @resources = Resource.page(params[:page]).per(10)
 
     render("resource_templates/index.html.erb")
   end

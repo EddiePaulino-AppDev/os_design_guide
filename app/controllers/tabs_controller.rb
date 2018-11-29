@@ -1,6 +1,6 @@
 class TabsController < ApplicationController
   def index
-    @tabs = Tab.all
+    @tabs = Tab.page(params[:page]).per(10)
 
     render("tab_templates/index.html.erb")
   end

@@ -1,6 +1,6 @@
 class TextComponentsController < ApplicationController
   def index
-    @text_components = TextComponent.all
+    @text_components = TextComponent.page(params[:page]).per(10)
 
     render("text_component_templates/index.html.erb")
   end
