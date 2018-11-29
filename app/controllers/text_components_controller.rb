@@ -33,6 +33,22 @@ class TextComponentsController < ApplicationController
     end
   end
 
+  def create_row_from_tab
+    @text_component = TextComponent.new
+
+    @text_component.tab_id = params.fetch("tab_id")
+    @text_component.header = params.fetch("header")
+    @text_component.content = params.fetch("content")
+
+    if @text_component.valid?
+      @text_component.save
+
+      redirect_to("/tabs/#{@text_component.tab_id}", notice: "TextComponent created successfully.")
+    else
+      render("text_component_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @text_component = TextComponent.find(params.fetch("prefill_with_id"))
 

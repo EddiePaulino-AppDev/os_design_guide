@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/resources/new", { :controller => "resources", :action => "new_form" })
   post("/create_resource", { :controller => "resources", :action => "create_row" })
+  post("/create_resource_from_tab", { :controller => "resources", :action => "create_row_from_tab" })
 
   # READ
   get("/resources", { :controller => "resources", :action => "index" })
@@ -36,6 +37,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/text_components/new", { :controller => "text_components", :action => "new_form" })
   post("/create_text_component", { :controller => "text_components", :action => "create_row" })
+  post("/create_text_component_from_tab", { :controller => "text_components", :action => "create_row_from_tab" })
 
   # READ
   get("/text_components", { :controller => "text_components", :action => "index" })
@@ -56,6 +58,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/tabs/new", { :controller => "tabs", :action => "new_form" })
   post("/create_tab", { :controller => "tabs", :action => "create_row" })
+  post("/create_tab_from_topic", { :controller => "tabs", :action => "create_row_from_topic" })
 
   # READ
   get("/tabs", { :controller => "tabs", :action => "index" })

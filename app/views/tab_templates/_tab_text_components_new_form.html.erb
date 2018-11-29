@@ -1,0 +1,37 @@
+<!-- Form text_component start -->
+<form action="/create_text_component_from_tab" method="post">
+<!-- Form text_component end -->
+
+  <!-- Label and input for tab_id start -->
+  <!-- Input for tab_id start -->
+  <input type="hidden" name="tab_id" value="<%= @tab.id %>">
+  <!-- Input for tab_id end -->
+
+  <!-- Label and input for header start -->
+  <div class="form-group">
+    <label for="header">
+      Header
+    </label>
+
+    <!-- Input for header start -->
+    <input type="text" id="header" name="header" class="form-control" value="<%= @text_component.header %>">
+    <!-- Input for header end -->
+  </div>
+  <!-- Label and input for header end -->
+
+  <!-- Label and input for content start -->
+  <div class="form-group">
+    <label for="content">
+      Content
+    </label>
+
+    <!-- Input for content start -->
+    <textarea id="content" name="content" class="form-control" rows="3"><%= @text_component.content %></textarea>
+    <!-- Input for content end -->
+  </div>
+  <!-- Label and input for content end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create text component
+  </button>
+</form>

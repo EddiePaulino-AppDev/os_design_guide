@@ -1,0 +1,37 @@
+<!-- Form resource start -->
+<form action="/create_resource_from_tab" method="post">
+<!-- Form resource end -->
+
+  <!-- Label and input for category start -->
+  <div class="form-group">
+    <label for="category">
+      Category
+    </label>
+
+    <!-- Input for category start -->
+    <input type="text" id="category" name="category" class="form-control" value="<%= @resource.category %>">
+    <!-- Input for category end -->
+  </div>
+  <!-- Label and input for category end -->
+
+  <!-- Label and input for tab_id start -->
+  <!-- Input for tab_id start -->
+  <input type="hidden" name="tab_id" value="<%= @tab.id %>">
+  <!-- Input for tab_id end -->
+
+  <!-- Label and input for resource start -->
+  <div class="form-group">
+    <label for="resource">
+      Resource
+    </label>
+
+    <!-- Input for resource start -->
+    <input type="text" id="resource" name="resource" class="form-control" value="<%= @resource.resource %>">
+    <!-- Input for resource end -->
+  </div>
+  <!-- Label and input for resource end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create resource
+  </button>
+</form>

@@ -6,6 +6,8 @@ class TabsController < ApplicationController
   end
 
   def show
+    @resource = Resource.new
+    @text_component = TextComponent.new
     @tab = Tab.find(params.fetch("id_to_display"))
 
     render("tab_templates/show.html.erb")
@@ -28,6 +30,22 @@ class TabsController < ApplicationController
       @tab.save
 
       redirect_back(:fallback_location => "/tabs", :notice => "Tab created successfully.")
+    else
+      render("tab_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_topic
+    @tab = Tab.new
+
+    @tab.title = params.fetch("title")
+    @tab.num_of_tabs = params.fetch("num_of_tabs")
+    @tab.topic_id = params.fetch("topic_id")
+
+    if @tab.valid?
+      @tab.save
+
+      redirect_to("/topics/#{@tab.topic_id}", notice: "Tab created successfully.")
     else
       render("tab_templates/new_form_with_errors.html.erb")
     end
