@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Text component resource:
+
+  # CREATE
+  get("/text_components/new", { :controller => "text_components", :action => "new_form" })
+  post("/create_text_component", { :controller => "text_components", :action => "create_row" })
+
+  # READ
+  get("/text_components", { :controller => "text_components", :action => "index" })
+  get("/text_components/:id_to_display", { :controller => "text_components", :action => "show" })
+
+  # UPDATE
+  get("/text_components/:prefill_with_id/edit", { :controller => "text_components", :action => "edit_form" })
+  post("/update_text_component/:id_to_modify", { :controller => "text_components", :action => "update_row" })
+
+  # DELETE
+  get("/delete_text_component/:id_to_remove", { :controller => "text_components", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Tab resource:
 
   # CREATE
