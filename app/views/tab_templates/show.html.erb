@@ -1,0 +1,82 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Tab #<%= @tab.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/tabs" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link tab start -->
+      <div class="col">
+        <a href="/tabs/<%= @tab.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit tab
+        </a>
+      </div>
+      <!-- Edit link tab end -->
+
+      <!-- Delete link tab start -->
+      <div class="col">
+        <a href="/delete_tab/<%= @tab.id %>" class="btn btn-block btn-outline-secondary">
+          Delete tab
+        </a>
+      </div>
+      <!-- Delete link tab end -->
+    </div>
+
+    <dl>
+      <dt>
+        Title
+      </dt>
+      <!-- Display title start -->
+      <dd>
+        <%= @tab.title %>
+      </dd>
+      <!-- Display title end -->
+
+      <dt>
+        Num of tabs
+      </dt>
+      <!-- Display num_of_tabs start -->
+      <dd>
+        <%= @tab.num_of_tabs %>
+      </dd>
+      <!-- Display num_of_tabs end -->
+
+      <dt>
+        Topic
+      </dt>
+      <!-- Display topic_id start -->
+      <dd>
+        <%= @tab.topic_id %>
+      </dd>
+      <!-- Display topic_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@tab.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@tab.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
