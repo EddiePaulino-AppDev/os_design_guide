@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_resource/:id_to_remove", { :controller => "resources", :action => "destroy_row" })
+  get("/delete_resource_from_tab/:id_to_remove", { :controller => "resources", :action => "destroy_row_from_tab" })
 
   #------------------------------
 
@@ -46,6 +47,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_text_component/:id_to_remove", { :controller => "text_components", :action => "destroy_row" })
+  get("/delete_text_component_from_tab/:id_to_remove", { :controller => "text_components", :action => "destroy_row_from_tab" })
 
   #------------------------------
 
@@ -65,6 +67,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_tab/:id_to_remove", { :controller => "tabs", :action => "destroy_row" })
+  get("/delete_tab_from_topic/:id_to_remove", { :controller => "tabs", :action => "destroy_row_from_topic" })
 
   #------------------------------
 

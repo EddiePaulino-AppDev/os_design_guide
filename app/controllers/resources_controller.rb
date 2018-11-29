@@ -55,6 +55,14 @@ class ResourcesController < ApplicationController
     end
   end
 
+  def destroy_row_from_tab
+    @resource = Resource.find(params.fetch("id_to_remove"))
+
+    @resource.destroy
+
+    redirect_to("/tabs/#{@resource.tab_id}", notice: "Resource deleted successfully.")
+  end
+
   def destroy_row
     @resource = Resource.find(params.fetch("id_to_remove"))
 

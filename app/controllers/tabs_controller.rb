@@ -55,6 +55,14 @@ class TabsController < ApplicationController
     end
   end
 
+  def destroy_row_from_topic
+    @tab = Tab.find(params.fetch("id_to_remove"))
+
+    @tab.destroy
+
+    redirect_to("/topics/#{@tab.topic_id}", notice: "Tab deleted successfully.")
+  end
+
   def destroy_row
     @tab = Tab.find(params.fetch("id_to_remove"))
 

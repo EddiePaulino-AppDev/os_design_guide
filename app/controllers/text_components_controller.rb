@@ -55,6 +55,14 @@ class TextComponentsController < ApplicationController
     end
   end
 
+  def destroy_row_from_tab
+    @text_component = TextComponent.find(params.fetch("id_to_remove"))
+
+    @text_component.destroy
+
+    redirect_to("/tabs/#{@text_component.tab_id}", notice: "TextComponent deleted successfully.")
+  end
+
   def destroy_row
     @text_component = TextComponent.find(params.fetch("id_to_remove"))
 
