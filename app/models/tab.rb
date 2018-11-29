@@ -1,6 +1,9 @@
 class Tab < ApplicationRecord
   # Direct associations
 
+  has_many   :resources,
+             :dependent => :destroy
+
   has_many   :text_components,
              :dependent => :destroy
 
